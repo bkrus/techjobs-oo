@@ -17,16 +17,18 @@ import javax.validation.Valid;
 @RequestMapping(value = "job")
 public class JobController {
 
+
     private JobData jobData = JobData.getInstance();
 
     // The detail display for a given Job at URLs like /job?id=17
     @RequestMapping(value = "", method = RequestMethod.GET)
     public String index(Model model, int id) {
-
+        model.addAttribute("job", jobData.findById(id));
         // TODO #1 - get the Job with the given ID and pass it into the view
 
         return "job-detail";
     }
+
 
     @RequestMapping(value = "add", method = RequestMethod.GET)
     public String add(Model model) {
