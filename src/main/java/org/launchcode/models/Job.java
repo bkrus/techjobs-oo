@@ -73,7 +73,7 @@ public class Job {
     }
 
     public int getId() {
-        return this.id;
+        return id;
     }
 
     @Override
